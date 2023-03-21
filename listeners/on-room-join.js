@@ -1,6 +1,8 @@
 const onRoomJoin = async (room, inviteeList, inviter) => {
   console.log('bot room-join room id:', room.id)
-  // const topic = await room.topic()
-  await room.say(`welcome to "${topic}"! I'm a chatgpt bot, you can @me for asking anything😄`)
+  console.log('inviter',inviter)
+  const inviterName = await inviter.name()
+  const topic = await room.topic()
+  await room.say(`welcome to "${topic}"!，invited by "${inviterName}"`, inviteeList[0])
 }
 export default onRoomJoin

@@ -26,8 +26,11 @@ const chatgptRequest = async (text) => {
       }),
     }
   )
+  console.log(111111)
 	const response = await res.json()
+  console.log(222222)
 	const message = response.choices[0].message
+  console.log(333333)
   response.text = message.content?.replace('\n\n','')
 	console.log('response',response)
 	return response
