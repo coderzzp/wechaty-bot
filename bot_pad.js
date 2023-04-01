@@ -1,11 +1,11 @@
 import { WechatyBuilder } from 'wechaty'
+import {PuppetPadlocal} from "wechaty-puppet-padlocal";
+const puppet = new PuppetPadlocal({ token:"8e7d2f3d77bd4039b78fe898852cd0da" })
 
 const wechaty = WechatyBuilder.build({
-  name: 'your-bot-name',
-  
-}) 
-
-
+    name: 'your-bot-name',
+    puppet
+  }) 
 wechaty
   .on('scan', (await import('./listeners/on-scan.js')).default
   )
